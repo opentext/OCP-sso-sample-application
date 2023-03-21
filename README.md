@@ -1,5 +1,5 @@
 # Description
-This project contains a sample project that demonstrates the REST service calls required to login to OT2 and 
+This project contains a sample project that demonstrates the REST service calls required to login to OCP and 
 access information management services (IMS) from OpenText.
 
 The sample code is written in plain javascript and the user can choose whether to run the code in the browser 
@@ -99,7 +99,7 @@ typically something like `https://localhost:4000/.*`.
 By default the correct url for the sample is already provided in the request body.
 Take care: Ensure also the `<apiUrl>/.*` is still kept in the payload.
 
-**Tenant page  using built-in OT2 authenticator**
+**Tenant page  using built-in OCP authenticator**
 
 Select one of the login flows and provide the corresponding service client values on the
 _tenant_ including the created tenant id and its service account password to login.
@@ -108,26 +108,26 @@ Take care: The _Client Id_ is the _consumerKey_ and _Client Secret_ is the _cons
 On the _tenant_ page you will create users and assign them to applications. You will also create an authenticator for your user. 
 The _tenant_ page supports two different flows through the page.
 
-By default the _tenant_ page assumes that the user to be created is a native user of the OT2 platform and that the built-in 
-OT2 platform authenticator will be used to authenticate the user. Hence the user can be created first without an authenticator 
-identified in the request body, meaning it will default to being authenticated via the built-in OT2 authenticator.
+By default the _tenant_ page assumes that the user to be created is a native user of the platform and that the built-in 
+OCP authenticator will be used to authenticate the user. Hence the user can be created first without an authenticator 
+identified in the request body, meaning it will default to being authenticated via the built-in OCP authenticator.
 
 If you want to use an external IdP as your authenticator for the user, then you create the external authenticator _first_ and 
 then create the user with the required external authenticator identified within the request body (see below). 
-If using the built-in OT2 authenticator you do not need to perform the create authenticator action on the _tenant_ page.
+If using the built-in OCP authenticator you do not need to perform the create authenticator action on the _tenant_ page.
 
 When logged in on _tenant_ page, create the user and assign the user to the app using their id's. 
 
-**User page using built-in OT2 authenticator**
+**User page using built-in OCP authenticator**
 
-Normally, when accessing OT2 services from the browser you will use the '_Authorization Code with PKCE_' option: 
+Normally, when accessing OCP services from the browser you will use the '_Authorization Code with PKCE_' option: 
 1. Set the organization and tenant id
 2. Select '_Authorize Code with PKCE_'
 3. Set '_Client Id_' to the app's public client _consumerKey_
 4. Leave '_Authenticator_' blank or set it the same as _tenantId_
 5. Click on '_Login_'
 
-If the flow is working correctly for the user you should see the OT2 platform login flow and be able to enter your user's email 
+If the flow is working correctly for the user you should see the platform login flow and be able to enter your user's email 
 address followed by their password and then be redirected back to the User page with a valid access token.
 
 Now you can press _Upload_ to upload an auto generated document. 
